@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="hero">
+        <form class="form-account" id="form">
+            <div class= "titulo">
+                <h2>Create Account</h2>
+            </div>
+            <div class="nombre">
+                <label class="nombre-label" for="nombre"> Nombre </label>
+                <input id="nombre" class="nombre-input" name="nombre" type="text">
+                <div id="error-nombre"></div>
+            </div>
+            <div class="email">
+                <label class="email-label" for="email"> Email </label>
+                <input id="email" type="email" class="email-input" name="email">
+                <div id="error-email"></div>
+            </div>
+            <div class="clave">
+                <label class="clave-label" for="clave"> Clave </label>
+                <input type="password" class="clave-input" minlength="8" name="clave" id="clave">
+                <div id="error-clave"></div>
+            </div>
+            <div class="confirme-clave">
+                <label class="confirme-clave-label" for="Confirme-clave"> Confirme su clave </label>
+                <input type="password" class="confirme-clave-input" name="confirme-clave" id="confirme-clave">
+                <div id="error-confirme-clave"></div>
+            </div>
+            <button type="submit" class="boton"> Enviar </button>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    const form = document.getElementById("form")
+    const nombre = document.getElementById("nombre")
+    const errorNombre =document.getElementById("error-nombre")
+    const email = document.getElementById("email")
+    const errorEmail =document.getElementById("error-email")
+    const clave = document.getElementById("clave")
+    const errorClave =document.getElementById("error-clave")
+    const confirmeClave = document.getElementById("confirme-clave")
+    const errorConfirmeClave =document.getElementById("error-confirme-clave")
+
+    form.addEventListener ('submit', (e) => {
+        let succesCounter = 0
+
+        if (nombre.value.length === 0) {
+            e.preventDefault()
+            nombre.style.borderColor = "red"
+            errorNombre.style.color = "red"
+            errorNombre.innerText = "Inserte nombre."
+            nombre.style.background = "url(images/error-icon.svg) no-repeat right scroll";
+            nombre.style.backgroundColor = "white"
+        } else {
+            errorNombre.innerText = ""
+            nombre.style.borderColor = "green"
+            nombre.style.background = "url(images/success-icon.svg) no-repeat right scroll";
+            nombre.style.backgroundColor = "white"
+            succesCounter++
+        }
+
+        if (email.value.length === 0) {
+            e.preventDefault()
+            email.style.borderColor = "red"
+            errorEmail.style.color = "red"
+            errorEmail.innerText = "Inserte email."
+            email.style.background = "url(images/error-icon.svg) no-repeat right scroll";
+            email.style.backgroundColor = "white"
+        } else {
+            errorEmail.innerText = ""
+            email.style.borderColor = "green"
+            email.style.background = "url(images/success-icon.svg) no-repeat right scroll";
+            email.style.backgroundColor = "white"
+            succesCounter++
+        }
+
+        if (clave.value.length === 0 || clave.value.length < 8) {
+            e.preventDefault()
+            clave.style.borderColor = "red"
+            errorClave.style.color = "red"
+            errorClave.innerText = "Inserte clave de minimo 8 caracteres."
+            clave.style.background = "url(images/error-icon.svg) no-repeat right scroll";
+            clave.style.backgroundColor = "white"
+        } else {
+            errorClave.innerText = ""
+            clave.style.borderColor = "green"
+            clave.style.background = "url(images/success-icon.svg) no-repeat right scroll";
+            clave.style.backgroundColor = "white"
+            succesCounter++
+        }
+
+        if (clave.value !== confirmeClave.value || clave.value.length === 0) {
+            e.preventDefault()
+            clave.style.borderColor = "red"
+            confirmeClave.style.borderColor = "red"
+            errorConfirmeClave.style.color ="red"
+            errorConfirmeClave.innerText = "Verifique su clave"
+            confirmeClave.style.background = "url(images/error-icon.svg) no-repeat right scroll";
+            confirmeClave.style.backgroundColor = "white"
+        } else {
+            errorConfirmeClave.innerText = ""
+            confirmeclave.style.borderColor = "green"
+            confirmeclave.style.background = "url(images/success-icon.svg) no-repeat right scroll";
+            confirmeClave.style.backgroundColor = "white"
+            succesCounter++
+        }
+
+        if (succesCounter === 4) {
+            alert('Proceso realizado con éxito')
+        }
+
+    })
+</script>
+
+</html>

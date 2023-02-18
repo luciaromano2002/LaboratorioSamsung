@@ -1,0 +1,54 @@
+* {
+    border-radius: .5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #252932;
+    display: flex;
+    justify-content: center;
+}
+
+.form-account {
+    background-color: #303643;
+    border: 5px solid #3f4359;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.titulo {
+    margin-bottom: -1em;
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+    color: #afbade;
+}
+.nombre-label, .email-label, .clave-label, .confirme-clave-label {
+    display: block;
+    font-size: 1.3em;
+    color: #afbade;
+}
+.nombre-input, .email-input, .clave-input, .confirme-clave-input {
+    height: 35px;
+    width: 100%;
+    color: black;
+    background-color: white;
+}
+.boton {
+    width: 75%;
+    height: 35px;
+    background-color: #6a63f6;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.nombre, .email, .clave, .confirme-clave {
+    margin: 0 0 20px 0;
+    width: 75%;
+}
